@@ -1,24 +1,40 @@
-# Система управління школою
+# School Management System
 
-Веб-додаток на основі Django для керування вчителями, учнями, предметами та класами в навчальному закладі.
+A Django-based web application for managing teachers, students, subjects, and classes in a school environment.
 
-## Можливості
+## Requirements
 
-- **Автентифікація користувачів**: Вхід, реєстрація та відновлення пароля.
-- **Панель керування**: Огляд з кількістю вчителів, учнів, предметів та класів.
-- **CRUD-операції**:
-  - Керування вчителями
-  - Керування учнями
-  - Керування предметами
-  - Керування класами
-- **Адаптивні форми**: Зручні форми з валідацією даних.
-- **Відновлення пароля**: Безпечне відновлення пароля через електронну пошту.
+* Python
+* HTML
+* CSS
+* Django
+* Bootstrap
 
-## Моделі
+## Features
 
-- **Вчитель**: Зберігає інформацію про вчителя (ім'я, контактні дані тощо)
-- **Учень**: Зберігає інформацію про учня (ім'я, клас, контакти тощо)
-- **Предмет**: Зберігає інформацію про предмет з призначеним вчителем
-- **Клас**: Зберігає інформацію про клас з призначеними учнями
+- **User Authentication**: Login, registration, and password reset functionality.
+- **Dashboard**: Overview with counts of teachers, students, subjects, and classes.
+- **CRUD Operations**:
+  - Teachers management
+  - Students management
+  - Subjects management
+  - Classes management
+- **Responsive Forms**: User-friendly forms with validation.
+- **Password Reset**: Secure password reset via email.
 
-## Встановлення
+## Models
+
+- **Teacher**: Stores teacher information (name, contact details, etc.)
+- **Student**: Stores student information (name, class, contact details, etc.)
+- **Subject**: Stores subject information with teacher assignment
+- **Class**: Stores class information with student assignments
+
+## Installation
+
+1. Install the required libraries
+   ```
+   pip install django
+   ```
+   
+2. 
+   
