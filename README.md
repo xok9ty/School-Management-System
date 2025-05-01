@@ -1,4 +1,4 @@
-# School Management System
+# 🏫School Management System
 
 A Django-based web application for managing teachers, students, subjects, and classes in a school environment.
 
@@ -29,7 +29,7 @@ A Django-based web application for managing teachers, students, subjects, and cl
 - **Subject**: Stores subject information with teacher assignment
 - **Class**: Stores class information with student assignments
 
-##Usage
+## Usage
 1. Login with your credentials or register a new account.
 2. Navigate through the dashboard to manage different entities.
 3. Use the respective sections to add, edit, or delete:
@@ -38,7 +38,7 @@ A Django-based web application for managing teachers, students, subjects, and cl
   - Subjects
   - Classes
 
-##Password Reset
+## Password Reset
 If you forget your password:
   1. Click on "Forgot password" link
   2. Enter your email address
