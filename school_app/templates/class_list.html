@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список класів</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Список класів</h1>
+            <a href="{% url 'add_class' %}" class="btn btn-success">Додати новий клас</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Номер класу</th>
+                        <th>Назва класу</th>
+                        <th>Класний керівник</th>
+                        <th>Учні</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for class in classes %}
+                    <tr>
+                        <td>{{ class.num_class }}</td>
+                        <td>{{ class.name_class }}</td>
+                        <td>{{ class.head_teacher }}</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                {% for student in class.student.all %}
+                                <li>{{ student.first_name }} {{ student.last_name }}</li>
+                                {% empty %}
+                                <li>Немає учнів</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="{% url 'edit_class' class.pk %}" class="btn btn-primary btn-sm">Редагувати</a>
+                                <a href="{% url 'delete_class' class.pk %}" class="btn btn-danger btn-sm">Видалити</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">Немає жодного класу</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-3">На головну</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

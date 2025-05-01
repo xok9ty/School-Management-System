@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список предметів</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Список предметів</h1>
+            <a href="{% url 'add_subject' %}" class="btn btn-success">Додати новий предмет</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Назва</th>
+                        <th>Опис</th>
+                        <th>Кількість уроків</th>
+                        <th>Вчитель</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for subject in subjects %}
+                    <tr>
+                        <td>{{ subject.subject_name }}</td>
+                        <td class="text-truncate" style="max-width: 200px;" title="{{ subject.bio }}">{{ subject.bio }}</td>
+                        <td>{{ subject.num_classs }}</td>
+                        <td>{{ subject.teacher|default:"Не призначено" }}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="{% url 'edit_subject' subject.pk %}" class="btn btn-primary btn-sm">Редагувати</a>
+                                <a href="{% url 'delete_subject' subject.pk %}" class="btn btn-danger btn-sm">Видалити</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">Немає жодного предмету</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-3">На головну</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
