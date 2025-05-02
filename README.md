@@ -19,24 +19,6 @@ A Django-based web application for managing teachers, students, subjects, and cl
   - Students management
   - Subjects management
   - Classes management
-- **Responsive Forms**: User-friendly forms with validation.
-- **Password Reset**: Secure password reset via email.
-
-## Usage
-1. Login with your credentials or register a new account.
-2. Navigate through the dashboard to manage different entities.
-3. Use the respective sections to add, edit, or delete:
-  - Teachers
-  - Students
-  - Subjects
-  - Classes
-
-## Password Reset
-If you forget your password:
-  1. Click on "Forgot password" link
-  2. Enter your email address
-  3. Check your email for reset instructions
-  4. Follow the link to set a new password
 
 ## Installation
 
@@ -53,7 +35,8 @@ If you forget your password:
 3. Create and activate a virtual environment:
    ```
    python -m venv venv
-   venv/bin/activate  # On MacOS use `source venv\Scripts\activate`
+   # Windows use `venv\Scripts\activate`
+   # MacOS use `source venv\Scripts\activate`
    ```
 
 4. Apply migrations:
