@@ -22,13 +22,6 @@ A Django-based web application for managing teachers, students, subjects, and cl
 - **Responsive Forms**: User-friendly forms with validation.
 - **Password Reset**: Secure password reset via email.
 
-## Models
-
-- **Teacher**: Stores teacher information (name, contact details, etc.)
-- **Student**: Stores student information (name, class, contact details, etc.)
-- **Subject**: Stores subject information with teacher assignment
-- **Class**: Stores class information with student assignments
-
 ## Usage
 1. Login with your credentials or register a new account.
 2. Navigate through the dashboard to manage different entities.
